@@ -16,7 +16,7 @@ function TopBar() {
   return (
     <Box component='header' bgcolor='#F4FBFF' py={5} position='sticky' zIndex={100} top={0}>
       <ContentWrapper>
-        <Stack direction='row' justifyContent='space-between' alignItems='center' display='none'>
+        <Stack direction='row' justifyContent='space-between' alignItems='center'>
           <Image width={48} height={48} src={Logo} alt='Logo' />
           <Stack direction='row' gap={5}>
             <TopLinkStyled

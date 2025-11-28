@@ -15,7 +15,7 @@ function Prize() {
         backgroundImage: 'url("/assets/images/prize_bg.png")',
       }}
     >
-      <ContentWrapper position='relative'>
+      <ContentWrapper position='relative' pb='160px'>
         <Typography
           variant='h2'
           textAlign='center'
@@ -34,7 +34,6 @@ function Prize() {
             display: 'grid',
             gridTemplateColumns: '1fr 1fr',
             gap: '48px',
-            paddingBottom: '160px',
             [theme.breakpoints.down('md')]: {
               gap: '24px 10px',
             },
@@ -53,8 +52,16 @@ function Prize() {
         </Box>
         <Stack
           alignItems='center'
-          position='absolute'
-          sx={{ left: '50%', transform: 'translateX(-48%)', bottom: -30 }}
+          sx={theme => ({
+            left: '50%',
+            bottom: -30,
+            transform: 'none',
+            position: 'static',
+            [theme.breakpoints.up('lg')]: {
+              transform: 'translateX(-48%)',
+              position: 'absolute',
+            },
+          })}
         >
           <Image alt='Prize' src={PrizeGirl} width={700} />
           <Box

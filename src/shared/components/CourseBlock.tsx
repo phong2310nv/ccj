@@ -9,6 +9,7 @@ import { Box, Button, IconButton, Stack, Typography } from '@mui/material';
 import { fontSize, fontWeight } from '@styles';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+
 const courses = [
   {
     title: '１級建築施工管理技士',
@@ -75,7 +76,6 @@ const courses = [
 function CourseBlock() {
   return (
     <Box
-      mx={-5}
       sx={theme => ({
         ['& .swiper-pagination']: {
           bottom: '0',
@@ -98,7 +98,19 @@ function CourseBlock() {
         },
       })}
     >
-      <Box position='relative' className='course-swiper-wrapper'>
+      <Box
+        position='relative'
+        className='course-swiper-wrapper'
+        overflow='visible'
+        mx='auto'
+        maxWidth={{
+          sm: 'none',
+          xs: 'none',
+          md: '70%',
+          lg: 'none',
+          xl: 'none',
+        }}
+      >
         <Swiper
           className='course-swiper'
           modules={[Pagination, Navigation]}

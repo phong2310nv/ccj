@@ -14,6 +14,7 @@ function TargetCard({ icon, value, description }: TargetCardProps) {
       sx={{
         background: '#20344D',
         borderRadius: '16px',
+        maxWidth: '400px',
       }}
       padding={{
         xs: 8,
