@@ -1,0 +1,74 @@
+{
+  "packageManager": "yarn@1.22.19",
+  "engines": {
+    "node": ">=20.0.0",
+    "yarn": ">=1.22.0"
+  },
+  "name": "ccj",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "build:analyze": "cross-env ANALYZE=true yarn build",
+    "build:profile": "next build --profile",
+    "build:debug": "next build --debug",
+    "start": "next start",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "prepare": "husky",
+    "format": "prettier --write \"src/**/*.{js,ts,tsx,json}\"",
+    "clean": "rm -rf .next out node_modules/.cache"
+  },
+  "dependencies": {
+    "@bprogress/next": "^3.2.12",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@hookform/resolvers": "^5.2.2",
+    "@mui/icons-material": "^7.3.4",
+    "@mui/material": "^7.3.4",
+    "@mui/material-nextjs": "^7.3.5",
+    "@svgr/webpack": "^8.1.0",
+    "axios": "^1.13.1",
+    "dayjs": "^1.11.18",
+    "next": "15.5.2",
+    "notistack": "^3.0.2",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-dropzone": "^14.3.8",
+    "react-hook-form": "^7.66.0",
+    "swiper": "^12.0.3",
+    "yup": "^1.7.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@eslint/eslintrc": "^3",
+    "@eslint/js": "^9.35.0",
+    "@next/eslint-plugin-next": "^16.0.1",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@typescript-eslint/eslint-plugin": "^8.42.0",
+    "@typescript-eslint/parser": "^8.42.0",
+    "eslint": "^9.38.0",
+    "eslint-config-next": "^16.0.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-unused-imports": "^4.2.0",
+    "globals": "^16.4.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.6",
+    "prettier": "^3.6.2",
+    "typescript": "^5"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,js,tsx,jsx,json}": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ]
+  }
+}
