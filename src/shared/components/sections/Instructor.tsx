@@ -1,5 +1,5 @@
 'use client';
-import { Box, Typography } from '@mui/material';
+import { Box, Button, Stack, Typography } from '@mui/material';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -95,6 +95,15 @@ function Instructor() {
             </SwiperSlide>
           ))}
         </Swiper>
+        <Stack direction='row' justifyContent='center' mt={4}>
+          <Button
+            fullWidth
+            size='large'
+            sx={{ maxWidth: '560px', borderRadius: '28px', minHeight: '84px', fontSize: '28px' }}
+          >
+            Đăng ký sớm nhận ưu đãi
+          </Button>
+        </Stack>
       </ContentWrapper>
     </Box>
   );

@@ -74,7 +74,13 @@ function Gain() {
           />
           <Stack gap={6} flex='1'>
             {listItems.map((item, index) => (
-              <Box key={index}>
+              <Box
+                key={index}
+                textAlign={{
+                  xs: 'center',
+                  md: 'left',
+                }}
+              >
                 <Typography
                   gutterBottom
                   variant='body1'

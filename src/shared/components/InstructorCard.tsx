@@ -1,6 +1,5 @@
 import { Avatar, Box, Typography } from '@mui/material';
 import { fontSize } from '@styles';
-import React from 'react';
 export type InstructorType = {
   name: string;
   image: string;
@@ -13,7 +12,7 @@ type InstructorCardProps = {
 
 function InstructorCard({ instructor }: InstructorCardProps) {
   return (
-    <Box bgcolor='#153345' color='white' p={4} borderRadius={2} height='100%'>
+    <Box bgcolor='#153345' color='white' p={4} borderRadius={2} height='100%' minHeight='510px'>
       <Avatar
         alt={instructor.name || 'Instructor Name'}
         src={instructor.image}
@@ -40,7 +39,7 @@ function InstructorCard({ instructor }: InstructorCardProps) {
         {instructor.position}
       </Typography>
       <Box height='1px' bgcolor='white' my={4} />
-      <Box component='ul'>
+      <Box component='ul' pl={6}>
         {instructor.bio.map((item, index) => (
           <Typography
             component='li'

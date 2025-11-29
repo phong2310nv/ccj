@@ -1,7 +1,9 @@
+'use client';
 import { Box, Stack, Typography } from '@mui/material';
 import { fontSize, fontWeight } from '@styles';
 import Image from 'next/image';
 import ContentWrapper from '../ContentWrapper';
+import { useDeviceSize } from '@shared/hooks/useDeviceSize';
 const listItems = [
   {
     title: 'Hệ thống luyện thi trực tuyến',
@@ -21,6 +23,7 @@ const listItems = [
   },
 ];
 function Training() {
+  const { isMobile } = useDeviceSize();
   return (
     <Box
       bgcolor='#153345'
@@ -107,7 +110,12 @@ function Training() {
               alt='Training System'
               width={600}
               height={400}
-              style={{ width: 'auto', height: '100%', borderRadius: '8px' }}
+              style={{
+                width: 'auto',
+                height: '100%',
+                borderRadius: '8px',
+                ...(isMobile ? { width: '100%', height: 'auto' } : {}),
+              }}
             />
           </Box>
         </Stack>
