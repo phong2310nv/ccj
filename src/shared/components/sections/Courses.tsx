@@ -9,7 +9,7 @@ import { useDeviceSize } from '@shared/hooks/useDeviceSize';
 
 function Courses() {
   const theme = useTheme();
-  const { isTablet, isMobile } = useDeviceSize();
+  const { isMobile } = useDeviceSize();
   return (
     <Box pt='50px' pb='80px' bgcolor='#F4FBFF'>
       <ContentWrapper>
