@@ -38,4 +38,12 @@ export const TabWrapperStyled = styled(Box)(({ theme }) => ({
     zIndex: 5,
     borderRadius: '500px',
   },
+  ['&:has(.MuiTabs-flexContainerVertical) ']: {
+    borderRadius: '36px',
+    '& .MuiTabs-indicator': {
+      width: '100%',
+      zIndex: 5,
+      borderRadius: '500px',
+    },
+  },
 }));

@@ -99,7 +99,17 @@ function Instructor() {
           <Button
             fullWidth
             size='large'
-            sx={{ maxWidth: '560px', borderRadius: '28px', minHeight: '84px', fontSize: '28px' }}
+            sx={theme => ({
+              maxWidth: '560px',
+              borderRadius: '28px',
+              minHeight: '84px',
+              fontSize: '28px',
+              [theme.breakpoints.down('sm')]: {
+                fontSize: '20px',
+                minHeight: '64px',
+                borderRadius: '16px',
+              },
+            })}
           >
             Đăng ký sớm nhận ưu đãi
           </Button>

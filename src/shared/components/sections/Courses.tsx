@@ -5,9 +5,11 @@ import { Box, Button, Stack, Typography, useTheme } from '@mui/material';
 import Tabs from '../Tabs';
 import { fontWeight } from '@styles';
 import CourseBlock from '../CourseBlock';
+import { useDeviceSize } from '@shared/hooks/useDeviceSize';
 
 function Courses() {
   const theme = useTheme();
+  const { isTablet, isMobile } = useDeviceSize();
   return (
     <Box pt='50px' pb='80px' bgcolor='#F4FBFF'>
       <ContentWrapper>
@@ -72,6 +74,7 @@ function Courses() {
         </Stack>
         <Stack direction='row' justifyContent='center' mb={10}>
           <Tabs
+            orientation={isMobile ? 'vertical' : 'horizontal'}
             value='online'
             options={[
               { value: 'online', label: 'Trực tuyến' },

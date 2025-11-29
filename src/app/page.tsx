@@ -1,6 +1,9 @@
-import { Box, Button } from '@mui/material';
+import { Box } from '@mui/material';
+import Contact from '@shared/components/sections/Contact';
 import Courses from '@shared/components/sections/Courses';
+import Faq from '@shared/components/sections/Faq';
 import Feedback from '@shared/components/sections/Feedback';
+import Footer from '@shared/components/sections/Footer';
 import Gain from '@shared/components/sections/Gain';
 import Header from '@shared/components/sections/Header';
 import Instructor from '@shared/components/sections/Instructor';
@@ -8,11 +11,10 @@ import News from '@shared/components/sections/News';
 import Prize from '@shared/components/sections/Prize';
 import Training from '@shared/components/sections/Training';
 import TopBar from '@shared/components/TopBar';
-import React from 'react';
 
 function Home() {
   return (
-    <Box>
+    <Box bgcolor='#F4F9FF'>
       <TopBar />
       <Header />
       <main>
@@ -22,13 +24,11 @@ function Home() {
         <Gain />
         <Instructor />
         <Feedback />
+        <Contact />
         <News />
+        <Faq />
       </main>
-      <Button>Đăng kí khóa học</Button>
-      <Button variant='outlined'>Đăng kí khóa học</Button>
-      <Button variant='outlined' color='secondary'>
-        Đăng kí khóa học
-      </Button>
+      <Footer />
     </Box>
   );
 }

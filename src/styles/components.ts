@@ -1,5 +1,5 @@
 import { alpha, Components, CssVarsTheme, Theme } from '@mui/material';
-import { fontWeight } from './tokens';
+import { fontWeight, lineHeight } from './tokens';
 
 /**
  * V4 Component Style Overrides
@@ -7,6 +7,35 @@ import { fontWeight } from './tokens';
  */
 
 export const components: Components<Omit<Theme, 'palette' | 'components'> & CssVarsTheme> = {
+  MuiInputBase: {
+    styleOverrides: {
+      root: ({ theme }) => ({
+        borderRadius: '8px',
+        border: `1px solid #475569`,
+        padding: '16px 16px',
+        height: '56px',
+        fontSize: '18px',
+        color: '#475569',
+        backgroundColor: theme.palette.common.white,
+        '&:focus-within': {
+          borderColor: theme.palette.primary.main,
+        },
+        '&.Mui-error': { border: `1px solid ${theme.palette.error.main}` },
+      }),
+      input: ({ theme }) => ({
+        padding: 0,
+        lineHeight: lineHeight.normal,
+        '::placeholder,:-ms-input-placeholder,::-moz-placeholder,:-moz-placeholder,::-webkit-input-placeholder':
+          {
+            color: theme.palette.grey[500],
+            opacity: 1,
+          },
+      }),
+      multiline: {
+        height: 'auto',
+      },
+    },
+  },
   MuiButton: {
     styleOverrides: {
       root: () => ({

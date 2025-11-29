@@ -35,7 +35,7 @@ function Gain() {
             lg: 'row',
           }}
           alignItems={{
-            xs: 'flex-start',
+            xs: 'center',
             lg: 'center',
           }}
           gap={{
@@ -50,7 +50,7 @@ function Gain() {
               lg: '560px',
             }}
           >
-            <Typography variant='h2' textTransform='uppercase' mb={4}>
+            <Typography variant='h2' textAlign='center' textTransform='uppercase' mb={4}>
               Bạn nhận được gì khi tham gia khóa học{' '}
               <Box component='span' color='#FF9100'>
                 建築施工管理技士

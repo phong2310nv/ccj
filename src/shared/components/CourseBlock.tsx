@@ -96,6 +96,12 @@ function CourseBlock() {
             width: 'calc(305px * 1 + 20px * 0 + 40px)',
           },
         },
+        [theme.breakpoints.down('md')]: {
+          marginInline: '-20px',
+        },
+        ['& .course-swiper']: {
+          padding: '20px 20px 50px 20px',
+        },
       })}
     >
       <Box
@@ -124,9 +130,6 @@ function CourseBlock() {
             nextEl: '.swiper-button-next',
             enabled: true,
             hideOnClick: true,
-          }}
-          style={{
-            padding: '20px 20px 50px 20px',
           }}
           breakpoints={{
             600: {

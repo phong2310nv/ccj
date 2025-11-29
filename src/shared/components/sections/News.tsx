@@ -40,11 +40,17 @@ function News() {
         xs: 10,
         lg: 20,
       }}
-      sx={{
-        ['& .swiper-slide ']: {
+      sx={theme => ({
+        ['& .swiper-slide']: {
           maxWidth: 410,
         },
-      }}
+        ['& .instructor-swiper']: {
+          padding: '20px 50px 50px 50px',
+          [theme.breakpoints.down('sm')]: {
+            padding: '20px 0 50px 0',
+          },
+        },
+      })}
     >
       <ContentWrapper>
         <Typography variant='h2' textAlign='center' textTransform='uppercase' mb={10}>
@@ -56,11 +62,7 @@ function News() {
           spaceBetween={45}
           slidesPerView='auto'
           pagination={{ clickable: true }}
-          // centeredSlides={true}
-          // centeredSlidesBounds={true}
           style={{
-            padding: '20px 50px 50px 50px',
-            paddingBottom: 50,
             alignItems: 'stretch',
           }}
           breakpoints={{
