@@ -20,7 +20,7 @@ function TopBar() {
       <ContentWrapper>
         <Stack direction='row' justifyContent='space-between' alignItems='center'>
           <Image width={48} height={48} src={Logo} alt='Logo' />
-          <Stack direction='row' gap={5} display={{ xs: 'none', lg: 'block' }}>
+          <Stack direction='row' gap={5} display={{ xs: 'none', lg: 'flex' }}>
             {LinkItems.map(item => (
               <TopLinkStyled
                 key={item.title}
