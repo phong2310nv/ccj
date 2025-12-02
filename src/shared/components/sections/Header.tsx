@@ -12,9 +12,9 @@ import TargetCard from '../TargetCard';
 
 function Header() {
   const theme = useTheme();
-  const { isTablet } = useDeviceSize();
+  const { isTablet, isMobile } = useDeviceSize();
   return (
-    <Box bgcolor='#F4FBFF'>
+    <Box bgcolor='#F4FBFF' id='home'>
       <ContentWrapper
         position='relative'
         pt={{
@@ -25,7 +25,10 @@ function Header() {
         overflow='hidden'
       >
         <Box
-          maxWidth='55%'
+          maxWidth={{
+            xs: 'none',
+            md: '55%',
+          }}
           mb={{
             xs: '41px',
             md: '60px',
@@ -33,6 +36,10 @@ function Header() {
           }}
           position='relative'
           zIndex={10}
+          textAlign={{
+            xs: 'center',
+            md: 'left',
+          }}
         >
           <Typography variant='h1' mb={4} textTransform='uppercase'>
             Khoá học{' '}
@@ -53,21 +60,46 @@ function Header() {
             Nhật Bản — giúp bạn nắm vững kiến thức nền tảng trong ngành xây dựng, tự tin chinh phục
             kỳ thi chứng chỉ thi công xây dựng Nhật.
           </Typography>
-          <Button size='large' sx={{ height: '64px', paddingInline: '32px', borderRadius: '16px' }}>
+          <Button
+            fullWidth={isMobile}
+            size='large'
+            sx={theme => ({
+              height: '64px',
+              paddingInline: '32px',
+              borderRadius: '16px',
+              fontSize: 20,
+              [theme.breakpoints.down('sm')]: {
+                fontSize: 18,
+              },
+            })}
+          >
             Tư vấn, hỗ trợ viết hồ sơ miễn phí
           </Button>
         </Box>
-        <Image
-          width={isTablet ? 672 : 734}
-          src={HeroImage}
-          alt='Hero'
-          objectFit='contain'
-          style={{
+        <Box
+          sx={theme => ({
             position: 'absolute',
             top: isTablet ? 80 : 73,
             right: isTablet ? -140 : 20,
-          }}
-        />
+            width: isTablet ? 672 : 734,
+            [theme.breakpoints.down('md')]: {
+              marginTop: '40px',
+              width: '100%',
+              position: 'static',
+            },
+          })}
+        >
+          <Image
+            width={734}
+            src={HeroImage}
+            alt='Hero'
+            objectFit='contain'
+            style={{
+              width: '100%',
+              height: 'auto',
+            }}
+          />
+        </Box>
         <Stack
           position='relative'
           zIndex={10}

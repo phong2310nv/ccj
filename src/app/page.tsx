@@ -17,7 +17,7 @@ function Home() {
     <Box bgcolor='#F4F9FF'>
       <TopBar />
       <Header />
-      <main>
+      <Box component='main' overflow='hidden'>
         <Prize />
         <Courses />
         <Training />
@@ -27,7 +27,7 @@ function Home() {
         <Contact />
         <News />
         <Faq />
-      </main>
+      </Box>
       <Footer />
     </Box>
   );

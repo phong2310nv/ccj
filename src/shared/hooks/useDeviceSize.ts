@@ -7,6 +7,7 @@ export const useDeviceSize = () => {
 
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const isTablet = useMediaQuery(theme.breakpoints.down('md'));
+  const isLaptop = useMediaQuery(theme.breakpoints.down('lg'));
 
-  return { isMobile, isTablet };
+  return { isMobile, isTablet, isLaptop };
 };

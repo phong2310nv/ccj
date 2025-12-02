@@ -270,6 +270,7 @@ function Faq() {
         xs: 10,
         md: 20,
       }}
+      id='faq'
     >
       <Typography variant='h1' textTransform='uppercase' textAlign='center' mb={12}>
         Câu hỏi thường gặp

@@ -2,6 +2,10 @@ html,
 body {
   padding: 0;
   margin: 0;
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  height: 100%;
+  overflow: auto; /* define explicitly */
 }
 * {
   box-sizing: border-box;

@@ -14,6 +14,7 @@ function Prize() {
       sx={{
         backgroundImage: 'url("/assets/images/prize_bg.png")',
       }}
+      id='benefits'
     >
       <ContentWrapper position='relative' pb='160px'>
         <Typography

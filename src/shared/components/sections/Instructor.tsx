@@ -50,6 +50,7 @@ const instructors: InstructorType[] = [
 function Instructor() {
   return (
     <Box
+      id='instructors'
       bgcolor='#F4FBFF'
       py={{
         xs: 10,

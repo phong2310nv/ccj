@@ -11,7 +11,7 @@ function Courses() {
   const theme = useTheme();
   const { isMobile } = useDeviceSize();
   return (
-    <Box pt='50px' pb='80px' bgcolor='#F4FBFF'>
+    <Box pt='50px' pb='80px' bgcolor='#F4FBFF' id='courses'>
       <ContentWrapper>
         <Typography
           variant='h2'
@@ -37,7 +37,7 @@ function Courses() {
           Chọn hình thức học phù hợp nhất – học online, offline hoặc video trọn bộ, tất cả đều có hỗ
           trợ giảng viên.
         </Typography>
-        <Stack direction='row' gap={6} justifyContent='center' mb={6}>
+        <Stack direction={{ xs: 'column', md: 'row' }} gap={6} justifyContent='center' mb={6}>
           <Button
             disableRipple
             variant='text'
