@@ -1,7 +1,7 @@
 'use client';
 import Logo from '@images/logo.png';
 import { Box, Button, Link, Stack, styled } from '@mui/material';
-import { LinkItems } from '@shared/constant';
+import { LinkItems, registerLink } from '@shared/constant';
 import { fontWeight } from '@styles';
 import Image from 'next/image';
 import ContentWrapper from './ContentWrapper';
@@ -41,8 +41,10 @@ function TopBar() {
                 sm: 'flex',
               }}
             >
-              <Button variant='outlined'>Luyện đề ngay</Button>
-              <Button>Đăng kí khóa học</Button>
+              <Button href={registerLink} variant='outlined'>
+                Luyện đề ngay
+              </Button>
+              <Button href={registerLink}>Đăng kí khóa học</Button>
             </Box>
             <DrawerMenu />
           </Stack>

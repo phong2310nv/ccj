@@ -21,3 +21,7 @@ export const LinkItems = [
     href: '#faq',
   },
 ];
+
+const registerLink = 'https://app.kenchikunokaze.com';
+
+export { registerLink };

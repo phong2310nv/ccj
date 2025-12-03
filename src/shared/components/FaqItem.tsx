@@ -15,6 +15,9 @@ function FaqItem({ item }: FaqItemProps) {
   return (
     <Box bgcolor='white' px={6} py={5} borderRadius={2}>
       <Stack
+        sx={{
+          cursor: 'pointer',
+        }}
         direction='row'
         justifyContent='space-between'
         alignItems='center'

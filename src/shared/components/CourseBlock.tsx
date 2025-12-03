@@ -9,6 +9,7 @@ import { Box, Button, IconButton, Stack, Typography } from '@mui/material';
 import { fontSize, fontWeight } from '@styles';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import { registerLink } from '@shared/constant';
 
 const courses = [
   {
@@ -100,7 +101,7 @@ function CourseBlock() {
           marginInline: '-20px',
         },
         ['& .course-swiper']: {
-          padding: '20px 20px 50px 20px',
+          padding: '20px 15px 50px 15px',
         },
       })}
     >
@@ -217,6 +218,7 @@ function CourseBlock() {
                     </Typography>
                   </Box>
                   <Button
+                    href={registerLink}
                     size='small'
                     variant={course.isHot ? 'contained' : 'outlined'}
                     color={course.isHot ? 'primary' : 'secondary'}

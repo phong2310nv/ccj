@@ -6,6 +6,7 @@ import Tabs from '../Tabs';
 import { fontWeight } from '@styles';
 import CourseBlock from '../CourseBlock';
 import { useDeviceSize } from '@shared/hooks/useDeviceSize';
+import { registerLink } from '@shared/constant';
 
 function Courses() {
   const theme = useTheme();
@@ -56,6 +57,7 @@ function Courses() {
             Khóa học 建築施工管理技士
           </Button>
           <Button
+            href={registerLink}
             disableRipple
             variant='text'
             size='small'

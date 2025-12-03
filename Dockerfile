@@ -1,21 +1,27 @@
-FROM node:22.19.0-alpine
+FROM node:22-alpine AS base
 WORKDIR /app
+ENV NEXT_TELEMETRY_DISABLED=1
 
-ENV NODE_ENV production
+FROM base AS deps
+RUN apk add --no-cache libc6-compat
+COPY package.json yarn.lock ./
+RUN corepack enable && yarn install --frozen-lockfile
 
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
+FROM base AS builder
+ENV NODE_ENV=production
+COPY --from=deps /app/node_modules ./node_modules
+COPY . .
+RUN yarn build
 
-COPY ./public ./public
-COPY ./package.json ./package.json
-
-COPY  --chown=nextjs:nodejs ./.next/standalone ./
-COPY  --chown=nextjs:nodejs ./.next/static ./.next/static
-
+FROM base AS runner
+ENV NODE_ENV=production
+ENV PORT=3000
+RUN addgroup --system --gid 1001 nodejs \
+	&& adduser --system --uid 1001 nextjs
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/package.json ./package.json
+COPY --from=builder /app/.next/standalone ./
+COPY --from=builder /app/.next/static ./.next/static
 USER nextjs
-
 EXPOSE 3000
-
-ENV PORT 3000
-
-CMD ["node", "--max-old-space-size=7500", "server.js"]
+CMD ["node", "server.js"]

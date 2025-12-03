@@ -9,6 +9,7 @@ import { fontWeight } from '@styles';
 import Image from 'next/image';
 import ContentWrapper from '../ContentWrapper';
 import TargetCard from '../TargetCard';
+import { registerLink } from '@shared/constant';
 
 function Header() {
   const theme = useTheme();
@@ -61,6 +62,7 @@ function Header() {
             kỳ thi chứng chỉ thi công xây dựng Nhật.
           </Typography>
           <Button
+            href={registerLink}
             fullWidth={isMobile}
             size='large'
             sx={theme => ({

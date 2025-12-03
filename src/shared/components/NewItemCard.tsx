@@ -1,4 +1,5 @@
 import { Box, Button, Typography } from '@mui/material';
+import { registerLink } from '@shared/constant';
 import { fontWeight } from '@styles';
 import Image from 'next/image';
 export type NewItem = {
@@ -48,7 +49,7 @@ function NewsItemCard({ item }: NewsItemCardProps) {
         >
           {item.description}
         </Typography>
-        <Button size='large' fullWidth>
+        <Button size='large' fullWidth href={registerLink}>
           Xem thêm
         </Button>
       </Box>

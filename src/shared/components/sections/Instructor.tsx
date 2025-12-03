@@ -7,6 +7,7 @@ import { Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import InstructorCard, { InstructorType } from '../InstructorCard';
 import ContentWrapper from '../ContentWrapper';
+import { registerLink } from '@shared/constant';
 
 const instructors: InstructorType[] = [
   {
@@ -98,6 +99,7 @@ function Instructor() {
         </Swiper>
         <Stack direction='row' justifyContent='center' mt={4}>
           <Button
+            href={registerLink}
             fullWidth
             size='large'
             sx={theme => ({
